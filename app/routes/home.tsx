@@ -1,3 +1,4 @@
+import { Heading, HStack, Text } from "@chakra-ui/react";
 import type { Route } from "./+types/home";
 
 export function meta({}: Route.MetaArgs) {
@@ -8,5 +9,7 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  return <>Hello</>;
+  return <HStack>
+            <Heading>Hello</Heading>
+  </HStack>;
 }
