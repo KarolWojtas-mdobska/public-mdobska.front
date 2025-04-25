@@ -3,6 +3,7 @@ import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, ScrollRestoration }
 import type { Route } from './+types/root';
 import './app.css';
 import { Provider } from './components/ui/provider';
+import './i18n/i18n';
 
 export function Layout({ children }: { children: React.ReactNode }) {
     return (
