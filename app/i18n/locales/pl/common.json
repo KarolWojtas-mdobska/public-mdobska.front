@@ -1,3 +1,11 @@
 {
-    "Brandname": "magda.dobska"
+    "Brandname": "magda.dobska",
+    "MainHeader": {
+        "Desc": "Krawiectwo"
+    },
+    "MainLink": {
+        "InstagramDesc": "Wejdź na mój Instagram i poznaj lepiej mnie i moje projekty.",
+        "VintedDesc": "Wejdź na mój profil Vinted, gdzie możesz kupić moje scrunchie, opaski oraz wiele innych rzeczy."
+    },
+    "WebsiteContruction": "Strona w budowie."
 }

@@ -1,3 +1,11 @@
 {
-    "Brandname": "magda.dobska"
+    "Brandname": "magda.dobska",
+    "MainHeader": {
+        "Desc": "Tailoring"
+    },
+    "MainLink": {
+        "InstagramDesc": "Visit my Instagram and get to know better me and my projects.",
+        "VintedDesc": "Visit my Vinted profile, where you can shop my scrunchies, headbands, and more."
+    },
+    "WebsiteContruction": "Page under construction."
 }

@@ -2,7 +2,7 @@ import { Container, Heading, SimpleGrid, Text, VStack } from '@chakra-ui/react';
 import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { LuInstagram } from 'react-icons/lu';
+import { LuConstruction } from 'react-icons/lu';
 import { useColorMode } from '~/components/ui/color-mode';
 import { SettingsFloat } from '~/routes/home/settings-float';
 import type { Route } from '../../+types/root';
@@ -19,16 +19,16 @@ export default function Home() {
     const { colorMode } = useColorMode();
     useEffect(() => setMounted(true), []);
     return (
-        <Container maxW="4xl" padding={{ base: 24, mdDown: 12 }}>
+        <Container maxW="4xl" padding={{ base: 24, mdDown: 6 }}>
             <VStack
                 w="100%"
                 borderRadius="lg"
                 padding={{ base: 24, mdDown: 12 }}
                 shadow={{ base: 'md' }}
-                mb="8"
                 bg={mounted && colorMode == 'dark' ? 'gray.900/30' : undefined}
                 align="center"
                 gap="6"
+                mb="8"
             >
                 <motion.div
                     initial={{ scale: 0.5, opacity: 0 }}
@@ -40,27 +40,35 @@ export default function Home() {
                             scale: {
                                 type: 'spring',
                                 visualDuration: 0.4,
-                                bounce: 0.5,
+                                bounce: 0.3,
                             },
                         },
                     }}
                 >
-                    <Heading size={{ base: '5xl', mdDown: '2xl' }} fontFamily="brand" letterSpacing="widest">
+                    <Heading size={{ base: '5xl', mdDown: '4xl' }} fontFamily="brand" letterSpacing="widest">
                         {t('Brandname')}
                     </Heading>
                 </motion.div>
-                <Text textStyle="md">Krawiectwo</Text>
             </VStack>
-
-            <SimpleGrid gap={4} columns={{ base: 1, md: 2 }}>
-                <ExternalLink title="Instagram" description="" href="https://www.instagram.com/magda.dobska" />
+            {/* <VStack padding={{ base: 12 }}>
+                <Text textStyle="md">{t('MainHeader.Desc')}</Text>
+            </VStack> */}
+            <SimpleGrid gap={4} columns={{ base: 1, md: 2 }} h="100%">
+                <ExternalLink
+                    title="Instagram"
+                    description={t('MainLink.InstagramDesc')}
+                    href="https://www.instagram.com/magda.dobska"
+                />
                 <ExternalLink
                     title="Vinted"
-                    description=""
+                    description={t('MainLink.VintedDesc')}
                     href="https://www.vinted.pl/member/91177021"
-                    avatar={<LuInstagram />}
                 />
             </SimpleGrid>
+            <VStack padding={{ base: 24, mdDown: 12 }}>
+                <LuConstruction />
+                <Text>{t('WebsiteContruction')}</Text>
+            </VStack>
             <SettingsFloat />
         </Container>
     );
