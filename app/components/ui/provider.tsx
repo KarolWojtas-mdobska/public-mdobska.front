@@ -11,6 +11,11 @@ const config = defineConfig({
                     value: '#A8BAB6',
                 },
             },
+            fonts: {
+                brand: {
+                    value: 'Marcellus, serif',
+                },
+            },
         },
     },
 });

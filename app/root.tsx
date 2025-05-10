@@ -5,6 +5,24 @@ import './app.css';
 import { Provider } from './components/ui/provider';
 import './i18n/i18n';
 
+export function links() {
+    return [
+        {
+            rel: 'preconnect',
+            href: 'https://fonts.googleapis.com',
+        },
+        {
+            rel: 'preconnect',
+            href: 'https://fonts.gstatic.com',
+            crossOrigin: 'use-credentials',
+        },
+        {
+            rel: 'stylesheet',
+            href: 'https://fonts.googleapis.com/css2?family=Marcellus&display=swap',
+        },
+    ];
+}
+
 export function Layout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en" suppressHydrationWarning={true}>
