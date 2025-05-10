@@ -53,7 +53,7 @@ export default function Home() {
             </VStack>
 
             <SimpleGrid gap={4} columns={{ base: 1, md: 2 }}>
-                <ExternalLink title="Instagram" description="" href="https://www.instagram.com/mdobska" />
+                <ExternalLink title="Instagram" description="" href="https://www.instagram.com/magda.dobska" />
                 <ExternalLink
                     title="Vinted"
                     description=""
