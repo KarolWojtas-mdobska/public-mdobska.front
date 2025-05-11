@@ -12,7 +12,7 @@ export const ExternalLink: FunctionComponent<Props> = ({ title, description, hre
     return (
         <LinkBox width="100%">
             <LinkOverlay href={href}>
-                <Card.Root variant="elevated">
+                <Card.Root variant="elevated" rounded="xl">
                     <Card.Body gap="2">
                         <Card.Title mt="2">{title}</Card.Title>
                         <Card.Description>{description}</Card.Description>
