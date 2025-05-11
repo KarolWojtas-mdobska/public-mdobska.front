@@ -14,21 +14,22 @@ export const ImageCard: FunctionComponent<Props> = ({ children, ref, url, ...pro
         <Stack
             direction={{ base: 'row', smDown: 'column' }}
             ref={ref}
-            rounded={{ base: 'full', smDown: 'lg' }}
+            rounded={{ base: 'xl' }}
             shadow="md"
-            align={{ base: 'center' }}
+            align={{ base: 'flex-start', smDown: 'center' }}
+            gap={{ base: 8, smDown: 0 }}
             {...props}
         >
             <Image
                 src={url}
                 boxSize={{ base: '150px', smDown: '200px' }}
                 width={{ base: 'auto', smDown: '50%' }}
-                rounded={{ base: 'full', smDown: 'xl' }}
+                rounded={{ base: 'xl' }}
                 fit="cover"
                 aspectRatio={{ base: 0.9 }}
                 objectPosition={{ base: '50% 20%', smDown: '50% 20%' }}
                 alt="Naruto Uzumaki"
-                transform={{ base: 'scale(120%)', smDown: 'translateY(-10%)' }}
+                transform={{ base: 'translate(20%, -20%)', smDown: 'translate(0, -10%)' }}
                 shadow="md"
             />
             {children}

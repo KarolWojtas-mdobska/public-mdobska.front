@@ -18,6 +18,7 @@ export default function Home() {
     const { t } = useTranslation();
     const mounted = useMounted();
     const { colorMode } = useColorMode();
+    const cardBg = mounted && colorMode == 'dark' ? 'gray.900/30' : undefined;
     return (
         <Container maxW="4xl" padding={{ base: 24, mdDown: 6 }}>
             <VStack
@@ -25,7 +26,7 @@ export default function Home() {
                 rounded="xl"
                 padding={{ base: 24, mdDown: 12 }}
                 shadow={{ base: 'md' }}
-                bg={mounted && colorMode == 'dark' ? 'gray.900/30' : undefined}
+                bg={cardBg}
                 align="center"
                 gap="6"
                 mb="16"
@@ -53,8 +54,14 @@ export default function Home() {
             {/* <VStack padding={{ base: 12 }}>
                 <Text textStyle="md">{t('MainHeader.Desc')}</Text>
             </VStack> */}
-            <ImageCard mb="12" url="https://drive.google.com/thumbnail?id=1M3bJHwMG_31kNzV1qTAdhhTmP5JXs89b">
-                <VStack p="8">Jestem piękna i szyję scrunchie oraz opaski.</VStack>
+            <ImageCard
+                bg={cardBg}
+                mb="12"
+                url="https://drive.google.com/thumbnail?id=1M3bJHwMG_31kNzV1qTAdhhTmP5JXs89b"
+            >
+                <VStack p={{ base: 8, smDown: 6 }}>
+                    <Text>Jestem piękna i szyję scrunchie oraz opaski.</Text>
+                </VStack>
             </ImageCard>
             <SimpleGrid gap={4} columns={{ base: 1, md: 2 }} h="100%">
                 <ExternalLink
