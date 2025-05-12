@@ -6,8 +6,9 @@ import { useColorMode } from '~/components/ui/color-mode';
 import { useMounted } from '~/hooks/mounted';
 import { SettingsFloat } from '~/routes/home/settings-float';
 import type { Route } from '../../+types/root';
+import { AvatarCard } from './avatar-card';
+import { Carousel } from './carousel';
 import { ExternalLink } from './external-link';
-import { ImageCard } from './image-card';
 
 export function meta({}: Route.MetaArgs) {
     const { t } = useTranslation();
@@ -54,15 +55,18 @@ export default function Home() {
             {/* <VStack padding={{ base: 12 }}>
                 <Text textStyle="md">{t('MainHeader.Desc')}</Text>
             </VStack> */}
-            <ImageCard
+            <AvatarCard
                 bg={cardBg}
                 mb="12"
-                url="https://drive.google.com/thumbnail?id=1M3bJHwMG_31kNzV1qTAdhhTmP5JXs89b"
+                url="https://bit.ly/naruto-sage"
+                alt="Profile picture"
+                // url="https://drive.google.com/thumbnail?id=1M3bJHwMG_31kNzV1qTAdhhTmP5JXs89b"
             >
                 <VStack p={{ base: 8, smDown: 6 }}>
                     <Text>Jestem piękna i szyję scrunchie oraz opaski.</Text>
                 </VStack>
-            </ImageCard>
+            </AvatarCard>
+            <Carousel mb={16} items={['Opaski', 'Gumki', 'Torebki']} />
             <SimpleGrid gap={4} columns={{ base: 1, md: 2 }} h="100%">
                 <ExternalLink
                     title="Instagram"

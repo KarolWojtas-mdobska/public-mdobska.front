@@ -1,0 +1,15 @@
+.list-container {
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0;
+    display: flex;
+    overflow-x: scroll;
+    gap: var(--chakra-spacing-6);
+    padding: var(--chakra-spacing-4) var(--chakra-spacing-2);
+    margin-left: calc(-1 * var(--chakra-spacing-2));
+    margin-right: calc(-1 * var(--chakra-spacing-2));
+}
+
+.list-item {
+    display: inline-block;
+    scroll-snap-align: center;
+}

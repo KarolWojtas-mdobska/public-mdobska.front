@@ -6,9 +6,10 @@ type Props = PropsWithChildren &
     StackProps & {
         ref?: RefObject<HTMLDivElement>;
         url: string;
+        alt: string;
     };
 
-export const ImageCard: FunctionComponent<Props> = ({ children, ref, url, ...props }) => {
+export const AvatarCard: FunctionComponent<Props> = ({ children, ref, url, alt, ...props }) => {
     const mounted = useMounted();
     return (
         <Stack
@@ -28,7 +29,7 @@ export const ImageCard: FunctionComponent<Props> = ({ children, ref, url, ...pro
                 fit="cover"
                 aspectRatio={{ base: 0.9 }}
                 objectPosition={{ base: '50% 20%', smDown: '50% 20%' }}
-                alt="Naruto Uzumaki"
+                alt={alt}
                 transform={{ base: 'translate(20%, -20%)', smDown: 'translate(0, -10%)' }}
                 shadow="md"
             />
