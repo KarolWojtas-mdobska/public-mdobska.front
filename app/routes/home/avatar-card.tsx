@@ -1,15 +1,15 @@
-import { Image, Stack, type StackProps } from '@chakra-ui/react';
+import { Stack, VStack, type StackProps } from '@chakra-ui/react';
 import type { FunctionComponent, PropsWithChildren, RefObject } from 'react';
+import { ResponsiveImage, type ResponsiveImageSource } from '~/components/common/responsive-image';
 import { useMounted } from '~/hooks/mounted';
 
 type Props = PropsWithChildren &
     StackProps & {
         ref?: RefObject<HTMLDivElement>;
-        url: string;
-        alt: string;
+        image: ResponsiveImageSource[];
     };
 
-export const AvatarCard: FunctionComponent<Props> = ({ children, ref, url, alt, ...props }) => {
+export const AvatarCard: FunctionComponent<Props> = ({ children, ref, image, ...props }) => {
     const mounted = useMounted();
     return (
         <Stack
@@ -21,19 +21,18 @@ export const AvatarCard: FunctionComponent<Props> = ({ children, ref, url, alt, 
             gap={{ base: 8, smDown: 0 }}
             {...props}
         >
-            <Image
-                src={url}
+            <ResponsiveImage
+                sources={image}
                 boxSize={{ base: '150px', smDown: '200px' }}
-                width={{ base: 'auto', smDown: '50%' }}
                 rounded={{ base: 'xl' }}
                 fit="cover"
                 aspectRatio={{ base: 0.9 }}
                 objectPosition={{ base: '50% 20%', smDown: '50% 20%' }}
-                alt={alt}
-                transform={{ base: 'translate(20%, -20%)', smDown: 'translate(0, -10%)' }}
+                transform={{ base: 'translate(24px, -24px)', smDown: 'translate(0, -8px)' }}
                 shadow="md"
+                zIndex={100}
             />
-            {children}
+            <VStack p={{ base: 8, smDown: 6 }}>{children}</VStack>
         </Stack>
     );
 };

@@ -3,10 +3,12 @@
     scroll-padding: 0;
     display: flex;
     overflow-x: scroll;
+    overflow-y: visible;
     gap: var(--chakra-spacing-6);
     padding: var(--chakra-spacing-4) var(--chakra-spacing-2);
     margin-left: calc(-1 * var(--chakra-spacing-2));
     margin-right: calc(-1 * var(--chakra-spacing-2));
+    position: relative;
 }
 
 .list-item {

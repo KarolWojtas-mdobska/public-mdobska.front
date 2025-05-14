@@ -1,14 +1,16 @@
 import { Container, Heading, SimpleGrid, Text, VStack } from '@chakra-ui/react';
 import { motion } from 'motion/react';
+import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { LuConstruction } from 'react-icons/lu';
 import { useColorMode } from '~/components/ui/color-mode';
 import { useMounted } from '~/hooks/mounted';
 import { SettingsFloat } from '~/routes/home/settings-float';
 import type { Route } from '../../+types/root';
+import { Carousel, type CarouselItem } from '../../components/common/carousel';
 import { AvatarCard } from './avatar-card';
-import { Carousel } from './carousel';
 import { ExternalLink } from './external-link';
+import images, { HomeImages } from './images';
 
 export function meta({}: Route.MetaArgs) {
     const { t } = useTranslation();
@@ -20,6 +22,21 @@ export default function Home() {
     const mounted = useMounted();
     const { colorMode } = useColorMode();
     const cardBg = mounted && colorMode == 'dark' ? 'gray.900/30' : undefined;
+    const carouselItems = useMemo<CarouselItem[]>(
+        () => [
+            {
+                id: 'bands',
+                image: images[HomeImages.bands],
+                content: <Text>Opaski</Text>,
+            },
+            {
+                id: 'scrunchies',
+                image: images[HomeImages.scrunchies],
+                content: <Text>Scrunchie</Text>,
+            },
+        ],
+        []
+    );
     return (
         <Container maxW="4xl" padding={{ base: 24, mdDown: 6 }}>
             <VStack
@@ -55,18 +72,10 @@ export default function Home() {
             {/* <VStack padding={{ base: 12 }}>
                 <Text textStyle="md">{t('MainHeader.Desc')}</Text>
             </VStack> */}
-            <AvatarCard
-                bg={cardBg}
-                mb="12"
-                url="https://bit.ly/naruto-sage"
-                alt="Profile picture"
-                // url="https://drive.google.com/thumbnail?id=1M3bJHwMG_31kNzV1qTAdhhTmP5JXs89b"
-            >
-                <VStack p={{ base: 8, smDown: 6 }}>
-                    <Text>Jestem piękna i szyję scrunchie oraz opaski.</Text>
-                </VStack>
+            <AvatarCard bg={cardBg} mb="12" image={images[HomeImages.profile]}>
+                <Text>Jestem piękna i szyję scrunchie oraz opaski.</Text>
             </AvatarCard>
-            <Carousel mb={16} items={['Opaski', 'Gumki', 'Torebki']} />
+            <Carousel mb={16} items={carouselItems} cardBg={cardBg} />
             <SimpleGrid gap={4} columns={{ base: 1, md: 2 }} h="100%">
                 <ExternalLink
                     title="Instagram"
