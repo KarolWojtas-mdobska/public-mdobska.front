@@ -9,8 +9,9 @@ export enum HomeImages {
 const images: Record<HomeImages, ResponsiveImageSource[]> = {
     [HomeImages.profile]: [
         {
-            url: 'https://lh3.googleusercontent.com/d/1M3bJHwMG_31kNzV1qTAdhhTmP5JXs89b',
+            // url: 'https://lh3.googleusercontent.com/d/1M3bJHwMG_31kNzV1qTAdhhTmP5JXs89b',
             // url: 'https://bit.ly/naruto-sage',
+            url: '/images/profile.webp',
             alt: 'Profile picture',                        
         },        
     ],
