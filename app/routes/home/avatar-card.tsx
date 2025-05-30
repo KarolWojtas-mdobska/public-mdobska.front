@@ -1,4 +1,4 @@
-import { Stack, VStack, type StackProps } from '@chakra-ui/react';
+import { Box, Stack, type StackProps } from '@chakra-ui/react';
 import type { FunctionComponent, PropsWithChildren, RefObject } from 'react';
 import { ResponsiveImage, type ResponsiveImageSource } from '~/components/common/responsive-image';
 import { useMounted } from '~/hooks/mounted';
@@ -9,7 +9,7 @@ type Props = PropsWithChildren &
         image: ResponsiveImageSource[];
     };
 
-export const AvatarCard: FunctionComponent<Props> = ({ children, ref, image, ...props }) => {
+export const AvatarCard: FunctionComponent<Props> = ({ children, ref, image, boxSize, ...props }) => {
     const mounted = useMounted();
     return (
         <Stack
@@ -21,18 +21,22 @@ export const AvatarCard: FunctionComponent<Props> = ({ children, ref, image, ...
             gap={{ base: 8, smDown: 0 }}
             {...props}
         >
-            <ResponsiveImage
-                sources={image}
-                boxSize={{ base: '150px', smDown: '200px' }}
-                rounded={{ base: 'xl' }}
-                fit="cover"
-                aspectRatio={{ base: 0.9 }}
-                objectPosition={{ base: '50% 20%', smDown: '50% 20%' }}
+            <Box
                 transform={{ base: 'translate(24px, -24px)', smDown: 'translate(0, -8px)' }}
                 shadow="md"
                 zIndex={100}
-            />
-            <VStack p={{ base: 8, smDown: 6 }}>{children}</VStack>
+                rounded={{ base: 'xl' }}
+            >
+                <ResponsiveImage
+                    sources={image}
+                    boxSize={boxSize ?? { base: '400px', lgDown: '350px', smDown: '200px' }}
+                    fit="cover"
+                    aspectRatio={{ base: 0.9 }}
+                    objectPosition={{ base: '50% 20%', smDown: '50% 20%' }}
+                    rounded={{ base: 'xl' }}
+                />
+            </Box>
+            <Box p={{ base: 8, smDown: 6 }}>{children}</Box>
         </Stack>
     );
 };

@@ -27,12 +27,12 @@ export default function Home() {
             {
                 id: 'bands',
                 image: images[HomeImages.bands],
-                content: <Text>Opaski</Text>,
+                content: <Heading>Opaski</Heading>,
             },
             {
                 id: 'scrunchies',
                 image: images[HomeImages.scrunchies],
-                content: <Text>Scrunchie</Text>,
+                content: <Heading>Scrunchie</Heading>,
             },
         ],
         []
@@ -73,7 +73,11 @@ export default function Home() {
                 <Text textStyle="md">{t('MainHeader.Desc')}</Text>
             </VStack> */}
             <AvatarCard bg={cardBg} mb="12" image={images[HomeImages.profile]}>
-                <Text>Jestem piękna i szyję scrunchie oraz opaski.</Text>
+                <VStack align="flex-start" bg="transparent">
+                    <Heading>Cześć!</Heading>
+                    <Text>Jestem Magda, zajmuję się krawiectwem. To moja pasja i sposób na zycie.</Text>
+                    <Text>Mieszkam w Gdyni z moim pięknym kotem Henryczkiem i takim jednym dziadem.</Text>
+                </VStack>
             </AvatarCard>
             <Carousel mb={16} items={carouselItems} cardBg={cardBg} />
             <SimpleGrid gap={4} columns={{ base: 1, md: 2 }} h="100%">

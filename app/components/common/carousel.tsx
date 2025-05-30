@@ -42,11 +42,8 @@ type CarouselCardProps = {
 
 const CarouselCard: FunctionComponent<CarouselCardProps> = ({ item, bg }) => {
     return (
-        <AvatarCard image={item.image} bg={bg}>
+        <AvatarCard image={item.image} bg={bg} boxSize={{ base: '300px', lgDown: '250px', smDown: '200px' }}>
             {item.content}
         </AvatarCard>
-        // <Box h="100%" shadow="md" p="8" rounded="xl">
-        //     {item.content}
-        // </Box>
     );
 };

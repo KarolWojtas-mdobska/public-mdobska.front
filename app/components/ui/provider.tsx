@@ -6,14 +6,27 @@ import { ColorModeProvider, type ColorModeProviderProps } from './color-mode';
 const config = defineConfig({
     theme: {
         tokens: {
-            colors: {
-                primary: {
-                    value: '#A8BAB6',
-                },
-            },
             fonts: {
                 brand: {
                     value: 'Marcellus, serif',
+                },
+            },
+        },
+        semanticTokens: {
+            colors: {
+                primary: {
+                    value: {
+                        _light: '#A8BAB6',
+                        _dark: 'red',
+                    },
+                },
+            },
+            shadows: {
+                primary: {
+                    value: {
+                        _light: '8px 8px 0 0 {colors.primary}',
+                        _dark: '8px 8px 0 0 {colors.primary}',
+                    },
                 },
             },
         },
