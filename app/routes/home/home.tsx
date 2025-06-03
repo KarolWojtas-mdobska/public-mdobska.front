@@ -69,11 +69,8 @@ export default function Home() {
                     </Heading>
                 </motion.div>
             </VStack>
-            {/* <VStack padding={{ base: 12 }}>
-                <Text textStyle="md">{t('MainHeader.Desc')}</Text>
-            </VStack> */}
             <AvatarCard bg={cardBg} mb="12" image={images[HomeImages.profile]}>
-                <VStack align="flex-start" bg="transparent">
+                <VStack align="flex-start">
                     <Heading>Cześć!</Heading>
                     <Text>Jestem Magda, zajmuję się krawiectwem. To moja pasja i sposób na zycie.</Text>
                     <Text>Mieszkam w Gdyni z moim pięknym kotem Henryczkiem i takim jednym dziadem.</Text>

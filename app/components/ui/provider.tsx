@@ -20,12 +20,16 @@ const config = defineConfig({
                         _dark: 'red',
                     },
                 },
+                primaryGradient: {
+                    value: {
+                        base: 'linear-gradient(230deg, rgba(255,0,0,0) 70%,  #A8BAB6);',
+                    },
+                },
             },
             shadows: {
                 primary: {
                     value: {
-                        _light: '8px 8px 0 0 {colors.primary}',
-                        _dark: '8px 8px 0 0 {colors.primary}',
+                        base: '8px 8px 0 0 {colors.primary}',
                     },
                 },
             },
