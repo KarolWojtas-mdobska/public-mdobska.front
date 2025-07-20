@@ -3,11 +3,12 @@ import { motion } from 'motion/react';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { LuConstruction } from 'react-icons/lu';
+import { HighlightHeading } from '~/components/common/highlight-heading/highlight-heading';
 import { useColorMode } from '~/components/ui/color-mode';
 import { useMounted } from '~/hooks/mounted';
 import { SettingsFloat } from '~/routes/home/settings-float';
 import type { Route } from '../../+types/root';
-import { Carousel, type CarouselItem } from '../../components/common/carousel';
+import { Carousel, type CarouselItem } from '../../components/common/carousel/carousel';
 import { AvatarCard } from './avatar-card';
 import { ExternalLink } from './external-link';
 import images, { HomeImages } from './images';
@@ -71,7 +72,7 @@ export default function Home() {
             </VStack>
             <AvatarCard bg={cardBg} mb="12" image={images[HomeImages.profile]}>
                 <VStack align="flex-start">
-                    <Heading>Cześć!</Heading>
+                    <HighlightHeading>Cześć! bla bla</HighlightHeading>
                     <Text>Jestem Magda, zajmuję się krawiectwem. To moja pasja i sposób na zycie.</Text>
                     <Text>Mieszkam w Gdyni z moim pięknym kotem Henryczkiem i takim jednym dziadem.</Text>
                 </VStack>

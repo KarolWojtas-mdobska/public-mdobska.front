@@ -11,6 +11,7 @@ type Props = PropsWithChildren &
 
 export const AvatarCard: FunctionComponent<Props> = ({ children, ref, image, boxSize, ...props }) => {
     const mounted = useMounted();
+    const baseImageOffset = '24px';
     return (
         <Stack
             direction={{ base: 'row', smDown: 'column' }}
@@ -19,24 +20,30 @@ export const AvatarCard: FunctionComponent<Props> = ({ children, ref, image, box
             shadow="md"
             align={{ base: 'flex-start', smDown: 'center' }}
             gap={{ base: 8, smDown: 0 }}
+            marginLeft={{ base: baseImageOffset, smDown: 0 }}
             {...props}
         >
             <Box
-                transform={{ base: 'translate(24px, -24px)', smDown: 'translate(0, -8px)' }}
+                transform={{
+                    base: `translate(-${baseImageOffset}, -${baseImageOffset})`,
+                    smDown: 'translate(0, -16px)',
+                }}
                 shadow="md"
                 zIndex={100}
                 rounded={{ base: 'xl' }}
             >
                 <ResponsiveImage
                     sources={image}
-                    boxSize={boxSize ?? { base: '400px', lgDown: '350px', smDown: '200px' }}
+                    boxSize={boxSize ?? { base: '400px', lgDown: '350px', smDown: '250px' }}
                     fit="cover"
                     aspectRatio={{ base: 0.9 }}
                     objectPosition={{ base: '50% 20%', smDown: '50% 20%' }}
                     rounded={{ base: 'xl' }}
                 />
             </Box>
-            <Box p={{ base: 8, smDown: 6 }}>{children}</Box>
+            <Box p={{ base: 8, smDown: 6 }} marginLeft={{ base: '-48px', smDown: 0 }}>
+                {children}
+            </Box>
         </Stack>
     );
 };
