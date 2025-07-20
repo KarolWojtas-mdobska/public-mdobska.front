@@ -3,7 +3,6 @@ import { motion } from 'motion/react';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { LuConstruction } from 'react-icons/lu';
-import { HighlightHeading } from '~/components/common/highlight-heading/highlight-heading';
 import { useColorMode } from '~/components/ui/color-mode';
 import { useMounted } from '~/hooks/mounted';
 import { SettingsFloat } from '~/routes/home/settings-float';
@@ -72,7 +71,7 @@ export default function Home() {
             </VStack>
             <AvatarCard bg={cardBg} mb="12" image={images[HomeImages.profile]}>
                 <VStack align="flex-start">
-                    <HighlightHeading>Cześć! bla bla</HighlightHeading>
+                    <Heading>Cześć! bla bla</Heading>
                     <Text>Jestem Magda, zajmuję się krawiectwem. To moja pasja i sposób na zycie.</Text>
                     <Text>Mieszkam w Gdyni z moim pięknym kotem Henryczkiem i takim jednym dziadem.</Text>
                 </VStack>
