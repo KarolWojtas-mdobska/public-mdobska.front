@@ -1,8 +1,8 @@
 import { Box, type BoxProps } from '@chakra-ui/react';
 import type { FunctionComponent, ReactElement } from 'react';
+import type { ResponsiveImageSource } from '~/components/common/responsive-image';
 import { AvatarCard } from '~/routes/home/avatar-card';
 import classes from './carousel.module.css';
-import type { ResponsiveImageSource } from './responsive-image';
 
 export type CarouselItem = {
     id: string;
