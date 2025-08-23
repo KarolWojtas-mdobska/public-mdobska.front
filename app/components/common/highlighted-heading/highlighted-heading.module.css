@@ -1,0 +1,17 @@
+.highlight-root {
+  position: relative;
+}
+
+.highlight {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: .3em;
+  width: 100%;
+  mask: url("/svg/highlight-left.svg"), url("/svg/highlight.svg"), url("/svg/highlight-right.svg");
+  mask-size: contain, calc(100% - 1rem), contain;
+  mask-position: left, center, right;
+  mask-repeat: no-repeat;
+  background: linear-gradient(to right, rgb(49, 176, 255), rgb(189, 132, 255));
+  z-index: -1;
+}

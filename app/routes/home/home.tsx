@@ -1,8 +1,8 @@
 import { Container, Heading, SimpleGrid, Text, VStack } from '@chakra-ui/react';
-import { motion } from 'motion/react';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { LuConstruction } from 'react-icons/lu';
+import HighHeading from '~/components/common/highlighted-heading/highlighted-heading.component';
 import { useColorMode } from '~/components/ui/color-mode';
 import { useMounted } from '~/hooks/mounted';
 import { SettingsFloat } from '~/routes/home/settings-float';
@@ -27,12 +27,12 @@ export default function Home() {
             {
                 id: 'bands',
                 image: images[HomeImages.bands],
-                content: <Heading>Opaski</Heading>,
+                content: <HighHeading>Opaski</HighHeading>,
             },
             {
                 id: 'scrunchies',
                 image: images[HomeImages.scrunchies],
-                content: <Heading>Scrunchie</Heading>,
+                content: <HighHeading>Scrunchie</HighHeading>,
             },
         ],
         []
@@ -49,29 +49,13 @@ export default function Home() {
                 gap="6"
                 mb="16"
             >
-                <motion.div
-                    initial={{ scale: 0.5, opacity: 0 }}
-                    animate={{
-                        scale: 1,
-                        opacity: 1,
-                        transition: {
-                            duration: 0.4,
-                            scale: {
-                                type: 'spring',
-                                visualDuration: 0.4,
-                                bounce: 0.3,
-                            },
-                        },
-                    }}
-                >
-                    <Heading size={{ base: '5xl', mdDown: '4xl' }} fontFamily="brand" letterSpacing="widest">
-                        {t('Brandname')}
-                    </Heading>
-                </motion.div>
+                <Heading size={{ base: '5xl', mdDown: '4xl' }} fontFamily="brand" letterSpacing="widest">
+                    {t('Brandname')}
+                </Heading>
             </VStack>
             <AvatarCard bg={cardBg} mb="12" image={images[HomeImages.profile]}>
                 <VStack align="flex-start">
-                    <Heading>Cześć! bla bla</Heading>
+                    <HighHeading>Cześć!</HighHeading>
                     <Text>Jestem Magda, zajmuję się krawiectwem. To moja pasja i sposób na zycie.</Text>
                     <Text>Mieszkam w Gdyni z moim pięknym kotem Henryczkiem i takim jednym dziadem.</Text>
                 </VStack>
