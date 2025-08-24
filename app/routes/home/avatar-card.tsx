@@ -1,6 +1,7 @@
 import { Box, Stack, type StackProps } from '@chakra-ui/react';
 import type { FunctionComponent, PropsWithChildren, RefObject } from 'react';
 import { ResponsiveImage, type ResponsiveImageSource } from '~/components/common/responsive-image';
+import classes from './avatar-card.module.css';
 
 type Props = PropsWithChildren &
     StackProps & {
@@ -28,7 +29,7 @@ export const AvatarCard: FunctionComponent<Props> = ({ children, ref, image, box
                 }}
                 shadow="md"
                 zIndex={100}
-                rounded={{ base: 'xl' }}
+                className={classes.borderGradient}
             >
                 <ResponsiveImage
                     sources={image}
@@ -36,7 +37,6 @@ export const AvatarCard: FunctionComponent<Props> = ({ children, ref, image, box
                     fit="cover"
                     aspectRatio={{ base: 0.9 }}
                     objectPosition={{ base: '50% 20%', smDown: '50% 20%' }}
-                    rounded={{ base: 'xl' }}
                 />
             </Box>
             <Box p={{ base: 8, smDown: 6 }} marginLeft={{ base: '-48px', smDown: 0 }}>
