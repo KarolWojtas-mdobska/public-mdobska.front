@@ -8,7 +8,7 @@ export default function HighHeading({ children, maxW }: HighHeadingProps) {
     return (
         <Box className={classes.highlightRoot} maxW={maxW}>
             <div className={classes.highlight}></div>
-            <Heading fontFamily="brand" size={{ base: '2xl', mdDown: 'lg' }} position="relative">
+            <Heading fontFamily="brand" size={{ base: '3xl', mdDown: '2xl' }} letterSpacing={2}>
                 {children}
             </Heading>
         </Box>

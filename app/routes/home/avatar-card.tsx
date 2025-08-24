@@ -1,7 +1,6 @@
 import { Box, Stack, type StackProps } from '@chakra-ui/react';
 import type { FunctionComponent, PropsWithChildren, RefObject } from 'react';
 import { ResponsiveImage, type ResponsiveImageSource } from '~/components/common/responsive-image';
-import { useMounted } from '~/hooks/mounted';
 
 type Props = PropsWithChildren &
     StackProps & {
@@ -10,7 +9,6 @@ type Props = PropsWithChildren &
     };
 
 export const AvatarCard: FunctionComponent<Props> = ({ children, ref, image, boxSize, ...props }) => {
-    const mounted = useMounted();
     const baseImageOffset = '24px';
     return (
         <Stack

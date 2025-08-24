@@ -35,6 +35,11 @@ const config = defineConfig({
             },
         },
     },
+    globalCss: {
+        body: {
+            backgroundColor: 'bg.subtle',
+        },
+    },
 });
 
 const system = createSystem(defaultConfig, config);
