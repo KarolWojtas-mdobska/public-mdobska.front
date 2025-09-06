@@ -37,7 +37,10 @@ const config = defineConfig({
     },
     globalCss: {
         body: {
-            backgroundColor: 'bg.subtle',
+            backgroundColor: {
+                _light: 'bg.subtle',
+                _dark: 'bg.muted',
+            },
         },
     },
 });
