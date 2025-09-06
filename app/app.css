@@ -1,0 +1,7 @@
+:root {
+    --sunset-gradient-start: rgb(109, 199, 255, .7);
+    --sunset-gradient-middle: rgb(205, 164, 252, .7);
+    --sunset-gradient-end: rgb(252, 226, 164, .7);
+    --sunset-gradient-h: linear-gradient(to right, var(--sunset-gradient-start), var(--sunset-gradient-middle), var(--sunset-gradient-end));
+    --sunset-gradient-v: linear-gradient(to bottom, var(--sunset-gradient-start), var(--sunset-gradient-middle), var(--sunset-gradient-end));
+}

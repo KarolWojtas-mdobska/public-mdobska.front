@@ -12,6 +12,6 @@
   mask-size: contain, calc(100% - 1rem), contain;
   mask-position: left, center, right;
   mask-repeat: no-repeat;
-  background: linear-gradient(to right, rgb(109, 199, 255), rgb(205, 164, 252), rgb(252, 226, 164));
+  background: var(--sunset-gradient-h);
   opacity: .7;
 }

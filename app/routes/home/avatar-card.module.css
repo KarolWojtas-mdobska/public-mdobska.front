@@ -1,6 +1,5 @@
 .border-gradient {
     border-width: 4px;
-    /* border-image: linear-gradient(to right, rgb(109, 199, 255, .7), rgb(205, 164, 252, .7), rgb(252, 226, 164, .7)); */
-    border-image: linear-gradient(to bottom, rgb(109, 199, 255, .7), rgb(205, 164, 252, .7), rgb(252, 226, 164, .7));    
+    border-image: var(--sunset-gradient-v);    
     border-image-slice: 9;
 }

@@ -14,16 +14,8 @@ const config = defineConfig({
         },
         semanticTokens: {
             colors: {
-                primary: {
-                    value: {
-                        _light: '#A8BAB6',
-                        _dark: 'red',
-                    },
-                },
-                primaryGradient: {
-                    value: {
-                        base: 'linear-gradient(230deg, rgba(255,0,0,0) 70%,  #A8BAB6);',
-                    },
+                sunsetGradient: {
+                    value: 'linear-gradient(to bottom, rgb(109, 199, 255, .7), rgb(205, 164, 252, .7), rgb(252, 226, 164, .7))',
                 },
             },
             shadows: {
