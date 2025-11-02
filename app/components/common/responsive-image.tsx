@@ -1,5 +1,5 @@
 import { Image, type ImageProps } from '@chakra-ui/react';
-import type { FunctionComponent } from 'react';
+import { type FunctionComponent } from 'react';
 
 export type ResponsiveImageSource = {
     url: string;

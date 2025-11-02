@@ -2,15 +2,15 @@ import { Container, Heading, SimpleGrid, Text, VStack } from '@chakra-ui/react';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import HighHeading from '~/components/common/highlighted-heading/highlighted-heading.component';
+import i18n from '~/i18n/i18n';
 import { SettingsFloat } from '~/routes/home/settings-float';
-import type { Route } from '../../+types/root';
 import { Carousel, type CarouselItem } from '../../components/common/carousel/carousel';
 import { AvatarCard } from './avatar-card';
 import { ExternalLink } from './external-link';
 import images, { HomeImages } from './images';
 
-export function meta({}: Route.MetaArgs) {
-    const { t } = useTranslation();
+export function meta() {
+    const { t } = i18n;
     return [{ title: t('Brandname') }, { name: 'description', content: `Welcome to ${t('Brandname')} web page!` }];
 }
 

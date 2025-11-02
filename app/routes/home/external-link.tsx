@@ -9,7 +9,7 @@ type Props = {
     avatar?: ReactElement;
 };
 
-export const ExternalLink: FunctionComponent<Props> = ({ title, description, href, avatar }) => {
+export const ExternalLink: FunctionComponent<Props> = ({ title, description, href }) => {
     return (
         <LinkBox width="100%">
             <LinkOverlay href={href}>
