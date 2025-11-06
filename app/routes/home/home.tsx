@@ -3,10 +3,10 @@ import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import HighHeading from '~/components/common/highlighted-heading/highlighted-heading.component';
 import i18n from '~/i18n/i18n';
-import { SettingsFloat } from '~/routes/home/settings-float';
+import { SettingsFloat } from '~/routes/home/components/settings-float';
 import { Carousel, type CarouselItem } from '../../components/common/carousel/carousel';
-import { AvatarCard } from './avatar-card';
-import { ExternalLink } from './external-link';
+import { AvatarCard } from './components/avatar-card';
+import { ExternalLink } from './components/external-link';
 import images, { HomeImages } from './images';
 
 export function meta() {
