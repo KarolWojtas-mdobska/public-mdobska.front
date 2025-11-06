@@ -6,11 +6,11 @@ export type HomeSectionProps = PropsWithChildren;
 export default function HomeSection({ children }: HomeSectionProps) {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({ target: ref });
-    const scale = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0.98, 1, 1, 0.98]);
+    const scale = useTransform(scrollYProgress, [0.9, 1], [1, 0.98]);
     const scaleSpring = useSpring(scale, {
         stiffness: 100,
         damping: 30,
-        restDelta: 0.005,
+        restDelta: 0.003,
     });
 
     return (
