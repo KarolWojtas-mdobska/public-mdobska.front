@@ -20,6 +20,18 @@ export function links() {
             rel: 'stylesheet',
             href: 'https://fonts.googleapis.com/css2?family=Marcellus&display=swap',
         },
+        {
+            rel: 'icon',
+            type: 'image/x-icon',
+            href: 'favicon-dark.ico',
+            media: '(prefers-color-scheme: dark)',
+        },
+        {
+            rel: 'icon',
+            type: 'image/x-icon',
+            href: 'favicon-light.ico',
+            media: '(prefers-color-scheme: light)',
+        },
     ];
 }
 
