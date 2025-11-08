@@ -1,9 +1,7 @@
 import { motion, useScroll, useSpring, useTransform } from 'motion/react';
 import { useRef, type PropsWithChildren } from 'react';
 
-export type HomeSectionProps = PropsWithChildren;
-
-export default function HomeSection({ children }: HomeSectionProps) {
+export default function ScrollAnimatedScale({ children }: PropsWithChildren) {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({ target: ref });
     const scale = useTransform(scrollYProgress, [0.9, 1], [1, 0.98]);

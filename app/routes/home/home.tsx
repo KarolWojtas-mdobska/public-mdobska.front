@@ -7,7 +7,7 @@ import { SettingsFloat } from '~/routes/home/components/settings-float';
 import { Carousel, type CarouselItem } from '../../components/common/carousel/carousel';
 import { AvatarCard } from './components/avatar-card';
 import { ExternalLink } from './components/external-link';
-import HomeSection from './components/home-section';
+import ScrollAnimatedScale from './components/scroll-animated-scale';
 import images, { HomeImages } from './images';
 
 export function meta() {
@@ -50,7 +50,7 @@ export default function Home() {
                     {t('Brandname')}
                 </Heading>
             </VStack>
-            <HomeSection>
+            <ScrollAnimatedScale>
                 <AvatarCard bg={cardBg} mb={sectionGap} image={images[HomeImages.profile]}>
                     <VStack align="flex-start">
                         <HighHeading>Cześć!</HighHeading>
@@ -58,11 +58,11 @@ export default function Home() {
                         <Text>Mieszkam w Gdyni z moim pięknym kotem Henryczkiem i takim jednym dziadem.</Text>
                     </VStack>
                 </AvatarCard>
-            </HomeSection>
-            <HomeSection>
+            </ScrollAnimatedScale>
+            <ScrollAnimatedScale>
                 <Carousel mb={sectionGap} items={carouselItems} cardBg={cardBg} />
-            </HomeSection>
-            <HomeSection>
+            </ScrollAnimatedScale>
+            <ScrollAnimatedScale>
                 <SimpleGrid gap={4} columns={{ base: 1, md: 2 }} h="100%">
                     <ExternalLink
                         title="Instagram"
@@ -75,7 +75,7 @@ export default function Home() {
                         href="https://www.vinted.pl/member/91177021"
                     />
                 </SimpleGrid>
-            </HomeSection>
+            </ScrollAnimatedScale>
             <SettingsFloat />
         </Container>
     );
