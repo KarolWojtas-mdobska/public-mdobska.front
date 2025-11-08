@@ -1,14 +1,16 @@
 import { IconButton, Portal, useBreakpointValue, VStack } from '@chakra-ui/react';
+import type { TargetAndTransition } from 'motion/react';
 import { AnimatePresence, LayoutGroup, motion } from 'motion/react';
-import { useState, type PropsWithChildren } from 'react';
+import { useMemo, useState, type PropsWithChildren } from 'react';
 import { useTranslation } from 'react-i18next';
 import { LuEllipsisVertical, LuMoon, LuSun, LuX } from 'react-icons/lu';
 import { useColorMode } from '~/components/ui/color-mode';
 import { LangSelect } from './lang-select';
 
 const AnimatedSettingsItem = ({ children }: PropsWithChildren) => {
+    const exitState = useMemo<TargetAndTransition>(() => ({ translateX: '300%' }), []);
     return (
-        <motion.div layout initial={{ translateX: '300%' }} animate={{ translateX: 0 }} exit={{ translateX: '300%' }}>
+        <motion.div layout initial={exitState} animate={{ translateX: 0 }} exit={exitState}>
             {children}
         </motion.div>
     );
